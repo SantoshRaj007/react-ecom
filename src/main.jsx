@@ -16,23 +16,25 @@ import '././assets/css/animate.css';
 import '././assets/css/style.min.css';
 
 import {
-  createBrowserRouter,
-  RouterProvider,
+    createBrowserRouter,
+    RouterProvider,
 } from "react-router-dom";
 import Blog from './blog/Blog.jsx';
 import Home from './home/Home.jsx';
 import Shop from './shop/Shop.jsx';
+import SingleProduct from './shop/SingleProduct.jsx';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [ 
-      { path: "/", element: <Home /> },
-      { path: "/shop", element: <Shop /> },
-      { path: "/blog", element: <Blog /> } 
-    ]
-  },
+    {
+        path: "/",
+        element: <App />,
+        children: [ 
+            { path: "/", element: <Home /> },
+            { path: "/shop", element: <Shop /> },
+            { path: "/blog", element: <Blog /> },
+            { path: "/shop/:id", element: <SingleProduct/>}
+        ]
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
