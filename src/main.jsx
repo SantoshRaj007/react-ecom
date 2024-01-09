@@ -23,16 +23,43 @@ import Blog from './blog/Blog.jsx';
 import Home from './home/Home.jsx';
 import Shop from './shop/Shop.jsx';
 import SingleProduct from './shop/SingleProduct.jsx';
+import About from './about/About.jsx';
+import Contact from './contact/Contact.jsx';
+import CartPage from './shop/CartPage.jsx';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App />,
         children: [ 
-            { path: "/", element: <Home /> },
-            { path: "/shop", element: <Shop /> },
-            { path: "/blog", element: <Blog /> },
-            { path: "/shop/:id", element: <SingleProduct/>}
+            { 
+                path: "/", 
+                element: <Home /> 
+            },
+            { 
+                path: "/blog", 
+                element: <Blog /> 
+            },
+            { 
+                path: "/about", 
+                element: <About />
+            },
+            { 
+                path:"/contact", 
+                element: <Contact />
+            },
+            { 
+                path: "/shop", 
+                element: <Shop /> 
+            },
+            { 
+                path: "/shop/:id", 
+                element: <SingleProduct/>
+            },
+            { 
+                path:"cart-page", 
+                element:<CartPage/> 
+            }
         ]
     },
 ]);
