@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PageHeader from '../components/PageHeader';
 import { Link } from 'react-router-dom';
 import  delImgUrl from "../assets/images/shop/del.png";
+import CheckOutPage from './CheckOutPage';
 
 const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -123,7 +124,9 @@ const CartPage = () => {
 
                                 <form className='cart-checkout'>
                                     <input type='text' value="Update Cart" />
-                                    <div >checkoutPage</div>
+                                    <div>
+                                        <CheckOutPage />
+                                    </div>
                                 </form>
                             </div>
                             {/* checkout box end */}
@@ -133,7 +136,7 @@ const CartPage = () => {
                                 <div className='row'>
                                     <div className='col-md-6 col-12'>
                                         <div className='calculate-shiping'>
-                                            <h3>Salculate Shiping</h3>
+                                            <h3>Calculate Shiping</h3>
                                             <div className='outline-select'>
                                                 <select>
                                                     <option value="uk">United kingdom (UK)</option>
@@ -145,9 +148,40 @@ const CartPage = () => {
                                                     <i className='icofont-rounded-down'></i>
                                                 </span>
                                             </div>
+                                            <div className='outline-select shipping-select'>
+                                                <select>
+                                                    <option value="uk">London</option>
+                                                    <option value="usa">New York</option>
+                                                    <option value="in">Delhi</option>
+                                                    <option value="jp">Siol</option>
+                                                </select>
+                                                <span className='select-icon'>
+                                                    <i className='icofont-rounded-down'></i>
+                                                </span>
+                                            </div>
+                                            <input type='text'  name='postalCode' id='postalCode' className='cart-page-input-text' placeholder='Postocode/Zip*'/>
+                                            <button type='submit' >Update</button>
                                         </div>
                                     </div>
-                                    <div className='col-md-6 col-12'>Right Side</div>
+                                    <div className='col-md-6 col-12'>
+                                        <div className='cart-overview'>
+                                            <h3>Cart Totals</h3>
+                                            <ul className='lab-ul'>
+                                                <li>
+                                                    <span className='pull-left'>Cart Subtotal</span>
+                                                    <p className='pull-right'>$ {cartSubTotal}</p>
+                                                </li>
+                                                <li>
+                                                    <span className='pull-left'>Shipping and Handling</span>
+                                                    <p className='pull-right'>Free Shiping</p>
+                                                </li>
+                                                <li>
+                                                    <span className='pull-left'>Order Total</span>
+                                                    <p className='pull-right'>$ {orderTotal.toFixed(2)}</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
